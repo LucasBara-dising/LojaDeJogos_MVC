@@ -1,0 +1,52 @@
+﻿@model LojaDeJogos.Models.Jogo
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Jogo</h2>
+<form action="~/jogo/ListaJogo" method="post"
+
+      <fieldset>
+          <legend>Cadastro do jogo</legend>
+      </fieldset>
+
+<!--CodGame-->
+      <div><label for="CodGame">Código do jogo</label></div>
+      <div><input type="number" value="@Model.CodGame" name="CodGame"</div>
+
+    <!--NomeGame-->
+    <div><label for="NomeGame">Nome do jogo</label></div>
+    <div><input type="text" value="@Model.NomeGame" name="NomeGame"</div>
+
+    <!--VersaoGame-->
+    <div><label for="VersaoGame">Versão do jogo</label></div>
+    <div><input type="number" value="@Model.VersaoGame" name="VersaoGame"</div>
+
+    <!--desenvolvedorGame-->
+    <div><label for="desenvolvedorGame">Desenvolvedor do jogo</label></div>
+    <div><input type="text" value="@Model.desenvolvedorGame" name="desenvolvedorGame"</div>
+
+    <!--GeneroGame-->
+    <div><label for="GeneroGame">Gênero do jogo</label></div>
+    <div><input type="text" value="@Model.GeneroGame" name="GeneroGame"</div>
+
+    <!--EtariaGame-->
+    <div><label for="EtariaGame">Faixa etária do jogo</label></div>
+    <div><input type="number" value="@Model.EtariaGame" name="EtariaGame"</div>
+
+    <!--PlataformaGame-->
+    <div><label for="PlataformaGame">Plataforma</label></div>
+    <div><input type="text" value="@Model.PlataformaGame" name="PlataformaGame"</div>
+
+    <!--AnoLancamentoGame-->
+    <div><label for="AnoLancamentoGame">Ano de Lançamento</label></div>
+    <div><input type="number" value="@Model.AnoLancamentoGame" name="AnoLancamentoGame"</div>
+
+    <!--SinopseJogo-->
+    <div><label for="SinopseJogo">Sinopse do jogo</label></div>
+    <div><input type="text" value="@Model.SinopseJogo" name="SinopseJogo"</div>
+    <br />
+    <div>
+        <input type="submit" value="enviar" />
+    </div>
+

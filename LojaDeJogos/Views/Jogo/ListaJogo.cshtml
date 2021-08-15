@@ -1,0 +1,35 @@
+﻿@model LojaDeJogos.Models.Jogo
+@{
+    ViewBag.Title = "ListaJogo";
+}
+
+<h2>Lista Jogo</h2>
+
+    <div><b>Código do jogo</b></div>
+    <div>@Model.CodGame</div>
+
+    <div><b>Nome do jogo</b></div>
+    <div>@Model.NomeGame</div>
+
+    <div><b>Versão do jog</b></div>
+    <div>@Model.VersaoGame</div>
+
+    <div><b>Desenvolvedor do jogo</b></div>
+    <div>@Model.desenvolvedorGame</div>
+
+    <div><b>Gênero do jogo</b></div>
+    <div>@Model.GeneroGame</div>
+
+    <div><b>Faixa etária do jogo</b></div>
+    <div>@Model.EtariaGame</div>
+
+    <div><b>Plataforma</b></div>
+    <div>@Model.PlataformaGame</div>
+
+    <div><b>Ano de Lançamento</b></div>
+    <div>@Model.AnoLancamentoGame</div>
+
+    <div><b>Sinopse do jogoo</b></div>
+    <div>@Model.SinopseJogo</div>
+<br/>
+@Html.ActionLink("Voltar","Index","Home")
