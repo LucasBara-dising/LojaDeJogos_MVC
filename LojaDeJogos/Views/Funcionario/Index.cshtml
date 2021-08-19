@@ -4,70 +4,76 @@
 }
 
 <h2>Funcionario</h2>
-    <!--campos do form-->
+@using (Html.BeginForm())
+{@Html.ValidationSummary(true)
+<!--campos do form-->
 <fildset>
     <legend>Cadastro de Funcionario</legend>
 
     <!-- cod func-->
-    <div class="editor-label">@Html.DisplayNameFor(model=>model.CodFunc)</div>
-    <div class="editor-field">@Html.DisplayFor(model=>model.CodFunc)</div>
+    <div class="editor-label">@Html.LabelFor(model => model.CodFunc)</div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.CodFunc)
+        @Html.ValidationMessageFor(model => model.CodFunc)
+    </div>
 
     <!--nome func -->
-    <div class ="editor-label">@Html.DisplayFor(model => model.NomeFunc)</div>
-    <div class ="editor-field">@Html.DisplayFor(model => model.NomeFunc)</div>
+    <div class="editor-label">@Html.LabelFor(model => model.NomeFunc)</div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.NomeFunc)
+        @Html.ValidationMessageFor(model => model.NomeFunc)
+    </div>
 
-            <!--Cpf func -->
-            <div>
-                <label for="CPFfunc">CPF</label>
-            </div>
-            <div>
-                <input type="number" value="@Model.CPFfunc" name="CPFfunc" />
-            </div>
+    <!--Cpf func -->
+    <div class="editor-label">@Html.LabelFor(model => model.CPFfunc)</div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.CPFfunc, new { htmlAttributes = new { placeholder = "000.000.000-00" } })
+        @Html.ValidationMessageFor(model => model.CPFfunc)
+    </div>
 
-            <!--nascimento func -->
-            <div>
-                <label for="NascFunc">Data de Nascimento</label>
-            </div>
-            <div>
-                <input type="number" value="@Model.NascFunc" name="NascFunc" />
-            </div>
+    <!--nascimento func -->
+    <div class="editor-label">@Html.LabelFor(model => model.NascFunc)</div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.NascFunc)
+        @Html.ValidationMessageFor(model => model.NascFunc)
+    </div>
 
-            <!--endereço func -->
-            <div>
-                <label for="EnderecoFunc">Endereço</label>
-            </div>
-            <div>
-                <input type="text" value="@Model.EnderecoFunc" name="EnderecoFunc" />
-            </div>
+    <!--endereço func -->
+    <div class="editor-label">@Html.LabelFor(model => model.EnderecoFunc)</div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.EnderecoFunc)
+        @Html.ValidationMessageFor(model => model.EnderecoFunc)
+    </div>
 
-            <!--celular func -->
-            <div>
-                <label for="CelularFunc">Telefone</label>
-            </div>
-            <div>
-                <input type="text" value="@Model.CelularFunc" name="CelularFunc" />
-            </div>
+    <!--celular func -->
+    <div class="editor-label">@Html.LabelFor(model => model.CelularFunc)</div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.CelularFunc, new { htmlAttributes = new { placeholder = "11 9999-9999" } })
+        @Html.ValidationMessageFor(model => model.CelularFunc)
+    </div>
 
-            <!--email func -->
-            <div>
-                <label for="EmailFunc">Email</label>
-            </div>
-            <div>
-                <input type="text" value="@Model.EmailFunc" name="EmailFunc" />
-            </div>
+    <!--email func -->
+    <div class="editor-label">@Html.LabelFor(model => model.EmailFunc)</div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.EmailFunc)
+        @Html.ValidationMessageFor(model => model.EmailFunc)
+    </div>
 
-            <!--cargo func -->
-            <div>
-                <label for="CargoFunc">Cargo</label>
-            </div>
-            <div>
-                <input type="text" value="@Model.CargoFunc" name="CargoFunc" />
-            </div>
+    <!--cargo func -->
+    <div class="editor-label">@Html.LabelFor(model => model.CargoFunc)</div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.CargoFunc)
+        @Html.ValidationMessageFor(model => model.CargoFunc)
+    </div>
 
-            <div>
-                <input type="submit" value="enviar" />
-            </div>
+    <div>
+        <input type="submit" value="enviar" />
+    </div>
 
 </fildset>
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval");
+}
+}
 
 

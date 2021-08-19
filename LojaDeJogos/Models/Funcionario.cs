@@ -20,12 +20,12 @@ namespace LojaDeJogos.Models
         [Display(Name = "CPF")]
         [Required(ErrorMessage = "Ops, o CPF do funcionário é obrigatorio")]
         [RegularExpression(@"^\d{3}\.\d{3}\.\d{3}-\d{2}$", ErrorMessage = "ops parece que esse CPF não existe ou está errado")]
-        public double CPFfunc { get; set; }
+        public string CPFfunc { get; set; }
 
         [Display(Name = "Data de Nascimento")]
         [Required(ErrorMessage = "Ops este campo tem que ser preenchido")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        public int NascFunc { get; set; }
+        public string NascFunc { get; set; }
 
         [Display(Name = "Endereço")]
         [Required(ErrorMessage = "Ops este campo tem que ser preenchido")]

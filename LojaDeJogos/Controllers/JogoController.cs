@@ -16,10 +16,10 @@ namespace LojaDeJogos.Controllers
             {
                 CodGame = 1,
                 NomeGame = "GTA",
-                VersaoGame = 5,
+                VersaoGame = "5",
                 desenvolvedorGame = "RockStar",
                 GeneroGame = "Tiro",
-                EtariaGame = 18,
+                EtariaGame = "18",
                 PlataformaGame = "PS3,PS4,Xbox 360, Xbox One,PC",
                 AnoLancamentoGame = 2013,
                 SinopseJogo = "Grand Theft Auto V possui três protagonistas jogáveis: Michael , Trevor e Franklin. Se passa Los Santos: uma metrópole banhadas pelo sol cheias de gurus de auto-ajuda.",
@@ -27,8 +27,13 @@ namespace LojaDeJogos.Controllers
             return View(game);
         }
         [HttpPost]
-        public ActionResult ListaJogo(Jogo game)
+        public ActionResult Index(Jogo game)
         {
+            if (ModelState.IsValid)
+            {
+                return View("ListaJogo", game);
+            }
+
             return View(game);
         }
     }

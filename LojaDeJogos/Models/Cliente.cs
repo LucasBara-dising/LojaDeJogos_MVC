@@ -21,16 +21,8 @@ namespace LojaDeJogos.Models
         [Display(Name = "Data de Nascimento")]
         [Required(ErrorMessage = "Ops este campo tem que ser preenchido")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime DatNascCli{
-            get {
-                return this.datNascCli.HasValue ? this.datNascCli.Value : DateTime.Now; 
-            } 
-            set {
-                this.datNascCli = value; 
-            } 
-        }
-        private DateTime? datNascCli = null;
-    
+        public string DatNascCli{ get; set; }
+
 
         [Display(Name = "Endereço")]
         [Required(ErrorMessage = "Ops este campo tem que ser preenchido")]

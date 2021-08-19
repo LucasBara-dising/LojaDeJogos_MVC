@@ -16,10 +16,10 @@ namespace LojaDeJogos.Controllers
             {
                 CodFunc = 1,
                 NomeFunc = "Luiz",
-                CPFfunc = 123456789,
-                NascFunc = 06 / 15 / 1973,
+                CPFfunc = "999.999.999-54",
+                NascFunc = "06 / 15 / 1973",
                 EnderecoFunc = "R. Acassias Verdejantes",
-                CelularFunc = "(11)946104464",
+                CelularFunc = "11 946104464",
                 EmailFunc = "Luiz963@gmail.com",
                 CargoFunc = "Gerente",
             };

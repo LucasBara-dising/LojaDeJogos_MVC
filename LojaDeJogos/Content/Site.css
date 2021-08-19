@@ -22,25 +22,3 @@ select,
 textarea {
     max-width: 280px;
 }
-
-
-/* ---------------------------------------------------
-    SIDEBAR STYLE
------------------------------------------------------ */
-
-.wrapper {
-    display: flex;
-    width: 100%;
-    align-items: stretch;
-}
-
-#sidebar {
-    height:100px;
-    width: 250px;
-    background: #7386D5;
-    color: #fff;
-}
-
-.editor-label{
-    margin-bottom:20px;
-}

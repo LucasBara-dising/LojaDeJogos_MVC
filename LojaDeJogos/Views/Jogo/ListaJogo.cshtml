@@ -3,33 +3,32 @@
     ViewBag.Title = "ListaJogo";
 }
 
-<h2>Lista Jogo</h2>
+<h2>Listar</h2>
+<fieldset>
+    <legend>Infomações do Funcionário</legend>
+    <div class="editor-label">@Html.DisplayNameFor(model => model.CodGame)</div>
+    <div class="editor-field">@Html.DisplayFor(model => model.CodGame)</div>
 
-    <div><b>Código do jogo</b></div>
-    <div>@Model.CodGame</div>
+    <div class="editor-label">@Html.DisplayNameFor(model => model.NomeGame)</div>
+    <div class="editor-field">@Html.DisplayFor(model => model.NomeGame)</div>
 
-    <div><b>Nome do jogo</b></div>
-    <div>@Model.NomeGame</div>
+    <div class="editor-label">@Html.DisplayNameFor(model => model.desenvolvedorGame)</div>
+    <div class="editor-field">@Html.DisplayFor(model => model.desenvolvedorGame)</div>
 
-    <div><b>Versão do jog</b></div>
-    <div>@Model.VersaoGame</div>
+    <div class="editor-label">@Html.DisplayNameFor(model => model.GeneroGame)</div>
+    <div class="editor-field">@Html.DisplayFor(model => model.GeneroGame)</div>
 
-    <div><b>Desenvolvedor do jogo</b></div>
-    <div>@Model.desenvolvedorGame</div>
+    <div class="editor-label">@Html.DisplayNameFor(model => model.EtariaGame)</div>
+    <div class="editor-field">@Html.DisplayFor(model => model.EtariaGame)</div>
 
-    <div><b>Gênero do jogo</b></div>
-    <div>@Model.GeneroGame</div>
+    <div class="editor-label">@Html.DisplayNameFor(model => model.PlataformaGame)</div>
+    <div class="editor-field">@Html.DisplayFor(model => model.PlataformaGame)</div>
 
-    <div><b>Faixa etária do jogo</b></div>
-    <div>@Model.EtariaGame</div>
+    <div class="editor-label">@Html.DisplayNameFor(model => model.AnoLancamentoGame)</div>
+    <div class="editor-field">@Html.DisplayFor(model => model.AnoLancamentoGame)</div>
 
-    <div><b>Plataforma</b></div>
-    <div>@Model.PlataformaGame</div>
-
-    <div><b>Ano de Lançamento</b></div>
-    <div>@Model.AnoLancamentoGame</div>
-
-    <div><b>Sinopse do jogoo</b></div>
-    <div>@Model.SinopseJogo</div>
-<br/>
-@Html.ActionLink("Voltar","Index","Home")
+    <div class="editor-label">@Html.DisplayNameFor(model => model.SinopseJogo)</div>
+    <div class="editor-field">@Html.DisplayFor(model => model.SinopseJogo)</div>
+    <br />
+    @Html.ActionLink("Voltar", "Index", "Home")
+</fieldset>

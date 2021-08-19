@@ -4,49 +4,82 @@
 }
 
 <h2>Jogo</h2>
-<form action="~/jogo/ListaJogo" method="post"
+@using (Html.BeginForm())
+{@Html.ValidationSummary(true)
+<fieldset>
+    <legend>Cadastro do jogo</legend>
 
-      <fieldset>
-          <legend>Cadastro do jogo</legend>
-      </fieldset>
 
-<!--CodGame-->
-      <div><label for="CodGame">Código do jogo</label></div>
-      <div><input type="number" value="@Model.CodGame" name="CodGame"</div>
+    <!--CodGame-->
+    <div class="editor-label">@Html.LabelFor(m => m.CodGame)</div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.CodGame)
+        @Html.ValidationMessageFor(m => m.CodGame)
+    </div>
 
     <!--NomeGame-->
-    <div><label for="NomeGame">Nome do jogo</label></div>
-    <div><input type="text" value="@Model.NomeGame" name="NomeGame"</div>
+    <div class="editor-label">@Html.LabelFor(m => m.NomeGame)</div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.NomeGame)
+        @Html.ValidationMessageFor(m => m.NomeGame)
+    </div>
 
     <!--VersaoGame-->
-    <div><label for="VersaoGame">Versão do jogo</label></div>
-    <div><input type="number" value="@Model.VersaoGame" name="VersaoGame"</div>
+    <div class="editor-label">@Html.LabelFor(m => m.VersaoGame)</div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.VersaoGame)
+        @Html.ValidationMessageFor(m => m.VersaoGame)
+    </div>
 
     <!--desenvolvedorGame-->
-    <div><label for="desenvolvedorGame">Desenvolvedor do jogo</label></div>
-    <div><input type="text" value="@Model.desenvolvedorGame" name="desenvolvedorGame"</div>
+    <div class="editor-label">@Html.LabelFor(m => m.desenvolvedorGame)</div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.desenvolvedorGame)
+        @Html.ValidationMessageFor(m => m.desenvolvedorGame)
+    </div>
 
     <!--GeneroGame-->
-    <div><label for="GeneroGame">Gênero do jogo</label></div>
-    <div><input type="text" value="@Model.GeneroGame" name="GeneroGame"</div>
+    <div class="editor-label">@Html.LabelFor(m => m.GeneroGame)</div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.GeneroGame)
+        @Html.ValidationMessageFor(m => m.GeneroGame)
+    </div>
 
     <!--EtariaGame-->
-    <div><label for="EtariaGame">Faixa etária do jogo</label></div>
-    <div><input type="number" value="@Model.EtariaGame" name="EtariaGame"</div>
+    <div class="editor-label">@Html.LabelFor(m => m.EtariaGame)</div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.EtariaGame)
+        @Html.ValidationMessageFor(m => m.EtariaGame)
+    </div>
 
     <!--PlataformaGame-->
-    <div><label for="PlataformaGame">Plataforma</label></div>
-    <div><input type="text" value="@Model.PlataformaGame" name="PlataformaGame"</div>
+    <div class="editor-label">@Html.LabelFor(m => m.PlataformaGame)</div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.PlataformaGame)
+        @Html.ValidationMessageFor(m => m.PlataformaGame)
+    </div>
 
     <!--AnoLancamentoGame-->
-    <div><label for="AnoLancamentoGame">Ano de Lançamento</label></div>
-    <div><input type="number" value="@Model.AnoLancamentoGame" name="AnoLancamentoGame"</div>
+    <div class="editor-label">@Html.LabelFor(m => m.AnoLancamentoGame)</div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.AnoLancamentoGame)
+        @Html.ValidationMessageFor(m => m.AnoLancamentoGame)
+    </div>
 
     <!--SinopseJogo-->
-    <div><label for="SinopseJogo">Sinopse do jogo</label></div>
-    <div><input type="text" value="@Model.SinopseJogo" name="SinopseJogo"</div>
+    <div class="editor-label">@Html.LabelFor(m => m.SinopseJogo)</div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.SinopseJogo)
+        @Html.ValidationMessageFor(m => m.SinopseJogo)
+    </div>
+
     <br />
     <div>
         <input type="submit" value="enviar" />
     </div>
+</fieldset>
+    @section Scripts{
+        @Scripts.Render("~/bundles/jqueryval");
+    }
+}
 
