@@ -22,3 +22,11 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.editor-label{
+    margin-top:20px;
+}
+
+.btn {
+    margin-top: 15px;
+}
