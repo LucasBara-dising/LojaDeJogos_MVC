@@ -4,13 +4,14 @@ using System.Linq;
 using System.Web;
 using LojaDeJogos.Models;
 using System.Web.Mvc;
+using LojaDeJogos.Repositorio;
 
 namespace LojaDeJogos.Controllers
 {
     public class JogoController : Controller
     {
         // GET: Jogo
-        public ActionResult Index()
+        public ActionResult Indexjogo()
         {
             Jogo game = new Jogo()
             {
@@ -26,15 +27,19 @@ namespace LojaDeJogos.Controllers
              };
             return View(game);
         }
+        Acoes acao = new Acoes();
         [HttpPost]
-        public ActionResult Index(Jogo game)
-        {
-            if (ModelState.IsValid)
-            {
-                return View("ListaJogo", game);
-            }
 
+        public ActionResult Cadjogo(Jogo game)
+        {
+            acao.Cadjogo(game);
             return View(game);
+        }
+        public ActionResult ListaJogo()
+        {
+            var ExibirJogo = new Acoes();
+            var TodosGames = ExibirJogo.ListarJogo();
+            return View(TodosGames);
         }
     }
 }

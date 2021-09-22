@@ -4,36 +4,44 @@ using System.Linq;
 using System.Web;
 using LojaDeJogos.Models;
 using System.Web.Mvc;
+using LojaDeJogos.Repositorio;
 
 namespace LojaDeJogos.Controllers
 {
+
     public class FuncionarioController : Controller
     {
         // GET: Funcionario
-        public ActionResult Index()
+        public ActionResult IndexFunc()
         {
-            Funcionario func = new Funcionario()
+            var func = new Funcionario()
             {
-                CodFunc = 1,
-                NomeFunc = "Luiz",
-                CPFfunc = "999.999.999-54",
-                NascFunc = "06 / 15 / 1973",
-                EnderecoFunc = "R. Acassias Verdejantes",
+                CodFunc = 2,
+                NomeFunc = "Luiz Ribeiro Silva",
+                CPFfunc = "997.148.271-54",
+                NascFunc = "06/15/1973",
+                EnderecoFunc = "AV. Primeira de Mangueira",
                 CelularFunc = "11 946104464",
-                EmailFunc = "Luiz963@gmail.com",
-                CargoFunc = "Gerente",
+                EmailFunc = "RibeiroLuiz@gmail.com",
+                CargoFunc = "Asistente",
             };
 
             return View(func);
         }
+        Acoes acao = new Acoes();
         [HttpPost]
-        public ActionResult Index(Funcionario func)
+
+        public ActionResult CadFunc(Funcionario func)
         {
-            if (ModelState.IsValid)
-            {
-                return View("Listar", func);
-            }
+            acao.CadFunc(func);
             return View(func);
+        }
+
+        public ActionResult ListarFunc()
+        {
+            var ExibirFunc = new Acoes();
+            var TodosFunc = ExibirFunc.ListarFunc();
+            return View(TodosFunc);
         }
     }
 }

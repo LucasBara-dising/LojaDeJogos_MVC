@@ -9,14 +9,15 @@ namespace LojaDeJogos.Models
 {
     public class Cliente
     {
-        [Display(Name = "Nome*")]
-        [Required(ErrorMessage = "Ops este campo tem que ser preenchido")]
-        public string NomeCli { get; set; }
-
         [Display(Name = "CPF*")]
         [Required(ErrorMessage = "Ops este campo tem que ser preenchido")]
         [RegularExpression(@"^\d{3}\.\d{3}\.\d{3}-\d{2}$", ErrorMessage = "ops parece que esse CPF não existe ou está errado")]
         public string CPFCli { get; set; }
+
+
+        [Display(Name = "Nome*")]
+        [Required(ErrorMessage = "Ops este campo tem que ser preenchido")]
+        public string NomeCli { get; set; }
 
         [Display(Name = "Data de Nascimento*")]
         [Required(ErrorMessage = "Ops este campo tem que ser preenchido")]

@@ -1,34 +1,96 @@
-﻿@model LojaDeJogos.Models.Jogo
+﻿@model IEnumerable<LojaDeJogos.Models.Jogo>
 @{
     ViewBag.Title = "ListaJogo";
 }
 
-<h2>Listar</h2>
-<fieldset>
-    <legend>Infomações do Funcionário</legend>
-    <div class="editor-label">@Html.DisplayNameFor(model => model.CodGame)</div>
-    <div class="editor-field">@Html.DisplayFor(model => model.CodGame)</div>
+<h2>Lista de jogos</h2>
+<br />
+<p>@Html.ActionLink("Cadastrar Outro Jogo", "Indexjogo")</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CodGame)
+        </th>
 
-    <div class="editor-label">@Html.DisplayNameFor(model => model.NomeGame)</div>
-    <div class="editor-field">@Html.DisplayFor(model => model.NomeGame)</div>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeGame)
+        </th>
 
-    <div class="editor-label">@Html.DisplayNameFor(model => model.desenvolvedorGame)</div>
-    <div class="editor-field">@Html.DisplayFor(model => model.desenvolvedorGame)</div>
+        <th>
+            @Html.DisplayNameFor(model => model.VersaoGame)
+        </th>
 
-    <div class="editor-label">@Html.DisplayNameFor(model => model.GeneroGame)</div>
-    <div class="editor-field">@Html.DisplayFor(model => model.GeneroGame)</div>
+        <th>
+            @Html.DisplayNameFor(model => model.desenvolvedorGame)
+        </th>
 
-    <div class="editor-label">@Html.DisplayNameFor(model => model.EtariaGame)</div>
-    <div class="editor-field">@Html.DisplayFor(model => model.EtariaGame)</div>
+        <th>
+            @Html.DisplayNameFor(model => model.GeneroGame)
+        </th>
 
-    <div class="editor-label">@Html.DisplayNameFor(model => model.PlataformaGame)</div>
-    <div class="editor-field">@Html.DisplayFor(model => model.PlataformaGame)</div>
+        <th>
+            @Html.DisplayNameFor(model => model.EtariaGame)
+        </th>
 
-    <div class="editor-label">@Html.DisplayNameFor(model => model.AnoLancamentoGame)</div>
-    <div class="editor-field">@Html.DisplayFor(model => model.AnoLancamentoGame)</div>
+        <tth>
+            @Html.DisplayNameFor(model => model.PlataformaGame)
+        </tth>
 
-    <div class="editor-label">@Html.DisplayNameFor(model => model.SinopseJogo)</div>
-    <div class="editor-field">@Html.DisplayFor(model => model.SinopseJogo)</div>
-    <br />
-    @Html.ActionLink("Voltar", "Index", "Home")
-</fieldset>
+        <th>
+            @Html.DisplayNameFor(model => model.AnoLancamentoGame)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.SinopseJogo)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelitem => item.CodGame)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.NomeGame)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.VersaoGame)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.desenvolvedorGame)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.GeneroGame)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.EtariaGame)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.PlataformaGame)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.AnoLancamentoGame)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.SinopseJogo)
+            </td>
+
+            <td>
+                @Html.ActionLink("Alterar", "AltJogo", null, new { cdGame = item.CodGame }, new { @class = "btn btn-primary btn-xs" })
+                @Html.ActionLink("Deletar", "DelJogo", null, new { cdGame = item.CodGame }, new { @class = "btn btn-danger btn-xs" })
+            </td>
+
+        </tr>
+
+    }
+
+</table>
+

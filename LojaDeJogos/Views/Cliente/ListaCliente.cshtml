@@ -1,29 +1,73 @@
-﻿@model LojaDeJogos.Models.Cliente
+﻿@model IEnumerable<LojaDeJogos.Models.Cliente>
 @{
     ViewBag.Title = "ListaCliente";
 }
 
-<h2>ListaCliente</h2>
-<fildset>
-    <legend>Dados do usuario</legend>
-    <div class="editor-label">@Html.DisplayNameFor(model => model.NomeCli)</div>
-    <div class="editor-field">@Html.DisplayFor(model => model.NomeCli)</div>
+<h2>Listar Funcionarios</h2>
+<br />
+<p>@Html.ActionLink("Cadastrar Outro Cliente", "IndexCliente")</p>
 
-    <div class="editor-label">@Html.DisplayNameFor(model => model.CPFCli)</div>
-    <div class="editor-field">@Html.DisplayFor(model => model.CPFCli)</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CPFCli)
+        </th>
 
-    <div class="editor-label">@Html.DisplayNameFor(model => model.DatNascCli)</div>
-    <div class="editor-field">@Html.DisplayFor(model => model.DatNascCli)</div>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeCli)
+        </th>
 
-    <div class="editor-label">@Html.DisplayNameFor(model => model.EnderecoCli)</div>
-    <div class="editor-field">@Html.DisplayFor(model => model.EnderecoCli)</div>
+        <th>
+            @Html.DisplayNameFor(model => model.DatNascCli)
+        </th>
 
-    <div class="editor-label">@Html.DisplayNameFor(model => model.CelularCli)</div>
-    <div class="editor-field">@Html.DisplayFor(model => model.CelularCli)</div>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoCli)
+        </th>
 
-    <div class="editor-label">@Html.DisplayNameFor(model => model.EmailCli)</div>
-    <div class="editor-field">@Html.DisplayFor(model => model.EmailCli)</div>
+        <th>
+            @Html.DisplayNameFor(model => model.CelularCli)
+        </th>
 
-    <br />
-    @Html.ActionLink("Voltar", "Index", "Home")
-</fildset>
+        <tth>
+            @Html.DisplayNameFor(model => model.EmailCli)
+        </tth>
+    </tr>
+
+    @foreach (var item in Model)
+     {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelitem => item.CPFCli)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.NomeCli)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.DatNascCli)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.EnderecoCli)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.CelularCli)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelitem => item.EmailCli)
+            </td>
+
+            <td>
+                @Html.ActionLink("Alterar", "AltFunc", null, new { cdCli = item.CPFCli }, new { @class = "btn btn-primary btn-xs" })
+                @Html.ActionLink("Deletar", "DelFunc", null, new { cdCli = item.CPFCli }, new { @class = "btn btn-danger btn-xs" })
+            </td>
+
+        </tr>
+
+     }
+ 
+</table>

@@ -1,10 +1,10 @@
 ﻿@model LojaDeJogos.Models.Jogo
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Indexjogo";
 }
 
 <h2>Jogo</h2>
-@using (Html.BeginForm())
+@using (Html.BeginForm("Cadjogo", "Jogo", FormMethod.Post))
 {@Html.ValidationSummary(true)
 <fieldset>
     <legend>Cadastro do jogo</legend>
@@ -75,11 +75,10 @@
 
     <br />
     <div>
-        <input type="submit" value="enviar" class="btn btn-primary"/>
+        <input type="submit" value="enviar" class="btn btn-primary" />
     </div>
 </fieldset>
-    @section Scripts{
-        @Scripts.Render("~/bundles/jqueryval");
-    }
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval");
 }
-
+}

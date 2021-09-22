@@ -1,0 +1,90 @@
+﻿@model IEnumerable<LojaDeJogos.Models.Funcionario>
+@{
+    ViewBag.Title = "ListarFunc";
+}
+
+<h2>Listar Funcionarios</h2>
+<br />
+<p>@Html.ActionLink("Cadastrar Outro Funcionario", "IndexFunc")</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CodFunc)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.NomeFunc)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.CPFfunc)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.NascFunc)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoFunc)
+        </th>
+
+        <tth>
+            @Html.DisplayNameFor(model => model.CelularFunc)
+        </tth>
+
+        <th>
+            @Html.DisplayNameFor(model => model.EmailFunc)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.CargoFunc)
+        </th>
+    </tr>
+
+    @foreach(var item in Model)
+     {
+<tr>
+    <td>
+        @Html.DisplayFor(modelitem => item.CodFunc)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelitem => item.NomeFunc)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelitem => item.CPFfunc)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelitem => item.NascFunc)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelitem => item.EnderecoFunc)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelitem => item.CelularFunc)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelitem => item.EmailFunc)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelitem => item.CargoFunc)
+    </td>
+
+    <td>
+        @Html.ActionLink("Alterar", "AltFunc", null, new { cdFunc = item.CodFunc }, new { @class = "btn btn-primary btn-xs" })
+        @Html.ActionLink("Deletar", "DelFunc", null, new { cdFunc = item.CodFunc }, new { @class = "btn btn-danger btn-xs" })
+    </td>
+
+</tr>
+
+     }
+
+</table>
+

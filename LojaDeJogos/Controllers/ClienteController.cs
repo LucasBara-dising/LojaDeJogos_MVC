@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using LojaDeJogos.Models;
+using LojaDeJogos.Repositorio;
 
 namespace LojaDeJogos.Controllers
 {
@@ -12,27 +13,33 @@ namespace LojaDeJogos.Controllers
         // GET: Cliente
         public ActionResult IndexCliente()
         {
-            Cliente cli = new Cliente();
-            /* {
+            var cli = new Cliente()
+            {
                  NomeCli = "Luiz Maia",
-                 CPFCli = 99999999954,
+                 CPFCli = "999.999.999-54",
                  DatNascCli = "03/05/1994",
                  EnderecoCli = "Rua Alencar Almeida",
-                 CelularCli = 948722365,
-                 EmailCli = "LuizMaia@gmail.com"
-             };*/
+                 CelularCli = "11 948324484",
+                EmailCli = "LuizMaia@gmail.com",
+            };
+
             return View(cli);
         }
+        Acoes acao = new Acoes();
         [HttpPost]
-        public ActionResult IndexCliente(Cliente cli) { 
-            if (ModelState.IsValid){                 //verifica se os inputs estão preeenchidos corretamnete
-                return View("ListaCliente", cli);    //se estiver tudo certo puxa a view que lista os resultados
-            } 
-            return  View(cli); 
-        }
-        public ActionResult ListaCliente(Cliente cli)
+        
+
+        public ActionResult CadCli(Cliente cli)
         {
+            acao.CadCli(cli);
             return View(cli);
+        }
+
+        public ActionResult ListaCliente()
+        {
+            var ExibirCli = new Acoes();
+            var TodosCli = ExibirCli.ListarCli();
+            return View(TodosCli);
         }
     }
 }

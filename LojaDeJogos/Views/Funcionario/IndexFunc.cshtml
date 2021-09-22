@@ -1,10 +1,9 @@
 ﻿@model LojaDeJogos.Models.Funcionario
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "IndexFunc";
 }
-
 <h2>Funcionario</h2>
-@using (Html.BeginForm())
+@using (Html.BeginForm("CadFunc", "Funcionario", FormMethod.Post))
 {@Html.ValidationSummary(true)
 <!--campos do form-->
 <fildset>
@@ -75,5 +74,4 @@
     @Scripts.Render("~/bundles/jqueryval");
 }
 }
-
 
